@@ -69,6 +69,106 @@ document.addEventListener("DOMContentLoaded", () => {
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  /* ---- Mobile nav toggle ---- */
+  const navPill = document.querySelector(".nav-pill");
+  const navToggle = document.querySelector(".nav-toggle");
+  const navLinkEls = document.querySelectorAll(".nav-links a");
+
+  if (navPill && navToggle) {
+    navToggle.addEventListener("click", () => {
+      const open = navPill.classList.toggle("open");
+      navToggle.setAttribute("aria-expanded", String(open));
+    });
+
+    navLinkEls.forEach((link) => {
+      link.addEventListener("click", () => {
+        navPill.classList.remove("open");
+        navToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+
+  /* ---- Theme toggle (persisted) ---- */
+  const themeToggle = document.querySelector(".theme-toggle");
+  const root = document.documentElement;
+
+  const storedTheme = localStorage.getItem("theme");
+  const initialTheme =
+    storedTheme ||
+    (window.matchMedia("(prefers-color-scheme: light)").matches
+      ? "light"
+      : "dark");
+  root.setAttribute("data-theme", initialTheme);
+  if (themeToggle) {
+    themeToggle.textContent = initialTheme === "light" ? "Dark" : "Light";
+    themeToggle.addEventListener("click", () => {
+      const next =
+        root.getAttribute("data-theme") === "light" ? "dark" : "light";
+      root.setAttribute("data-theme", next);
+      localStorage.setItem("theme", next);
+      themeToggle.textContent = next === "light" ? "Dark" : "Light";
+    });
+  }
+
+  /* ---- Project filtering ---- */
+  const filterBtns = document.querySelectorAll(".project-filters button");
+  const projectEls = document.querySelectorAll(".project");
+
+  filterBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const cat = btn.dataset.filter;
+      filterBtns.forEach((b) => b.classList.remove("is-active"));
+      btn.classList.add("is-active");
+      projectEls.forEach((p) => {
+        const cats = (p.dataset.cat || "").split(" ");
+        const show = cat === "all" || cats.includes(cat);
+        p.classList.toggle("is-hidden", !show);
+        if (show) {
+          const media = p.querySelector("[data-media]");
+          if (media) media.classList.add("is-visible");
+        }
+      });
+    });
+  });
+
+  /* ---- Contact form (Formsubmit AJAX) ---- */
+  const contactForm = document.getElementById("contactForm");
+  if (contactForm) {
+    contactForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const status = contactForm.querySelector(".contact-form__status");
+      const btn = contactForm.querySelector("button");
+      btn.disabled = true;
+      status.textContent = "Sending…";
+      try {
+        const res = await fetch(
+          "https://formsubmit.co/ajax/farhancchemmala@gmail.com",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            body: JSON.stringify(
+              Object.fromEntries(new FormData(contactForm))
+            ),
+          }
+        );
+        if (res.ok) {
+          status.textContent = "Thanks! Your message is on its way.";
+          contactForm.reset();
+        } else {
+          status.textContent =
+            "Something went wrong. Try emailing me directly.";
+        }
+      } catch {
+        status.textContent = "Network error. Try emailing me directly.";
+      } finally {
+        btn.disabled = false;
+      }
+    });
+  }
+
   /* ---- Flip nav pill to dark theme when it overlaps the white footer ---- */
   const footerEl = document.querySelector(".footer");
   if (footerEl && "IntersectionObserver" in window) {

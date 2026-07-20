@@ -4,7 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MFC — Engineer & Developer</title>
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='%23090909'/%3E%3Ctext%20x='32'%20y='43'%20font-family='Arial,Helvetica,sans-serif'%20font-size='24'%20font-weight='bold'%20fill='%2300e5ff'%20text-anchor='middle'%3EMFC%3C/text%3E%3C/svg%3E"
+  />
   <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="apple-touch-icon" href="images/logo.png" />
+
+  <meta
+    name="description"
+    content="Muhammed Farhan C — Mechanical Engineering student & builder of integrated hardware-software solutions. IoT, Flutter, simulations, and AI tooling."
+  />
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="MFC — Engineer & Developer" />
+  <meta
+    property="og:description"
+    content="Mechanical engineer, builder, and creator of integrated hardware & software solutions."
+  />
+  <meta property="og:image" content="images/portrait.jpg" />
+  <meta property="og:url" content="https://mhd-farhanc.github.io/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MFC — Engineer & Developer" />
+  <meta
+    name="twitter:description"
+    content="Mechanical engineer, builder, and creator of integrated hardware & software solutions."
+  />
+  <meta name="twitter:image" content="images/portrait.jpg" />
 
   <!-- Google Fonts: Anton + Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,13 +51,23 @@
   <!-- ============ SECTION 1: FLOATING NAV PILL ============ -->
   <nav class="nav-pill" aria-label="Primary">
     <a href="#hero" class="nav-logo">MFC</a>
-    <ul class="nav-links">
+    <ul class="nav-links" id="nav-links-list">
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#certs">Certs</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="#contact" class="nav-cta">Contact</a>
+    <button class="theme-toggle" aria-label="Toggle light and dark theme">
+      Light
+    </button>
+    <button
+      class="nav-toggle"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+      aria-controls="nav-links-list"
+    >
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <!-- ============ SECTION 2: HERO ============ -->
@@ -78,7 +116,7 @@
     </div>
     <div class="about__body">
       <p>
-        I'm a Mechanical Engineering student at <strong>TKM College of Engineering</strong>,
+        I'm a Mechanical Engineering student at <strong>TKM College of Engineering, Kollam</strong>,
         driven by a passion for building integrated hardware-software solutions that
         live at the messy, exciting intersection of the physical and the digital.
       </p>
@@ -87,6 +125,11 @@
         apps, I like to take ideas from first principles and ship things that work
         in the real world — not just on paper.
       </p>
+      <a class="stat-callout" href="#about">
+        <span class="stat-callout__num">8.34 CGPA</span>
+        <span class="stat-callout__meta">Currently in 5th semester at TKM College of Engineering, Kollam</span>
+      </a>
+
       <a class="stat-callout" href="https://www.youtube.com/@mynameisgarry" target="_blank" rel="noopener">
         <span class="stat-callout__num">400+ subs</span>
         <span class="stat-callout__meta">Creator of Garry Mods — 275,000+ total views on YouTube ↗</span>
@@ -114,8 +157,15 @@
   <section class="projects" id="projects">
     <h2 class="projects__heading">SELECTED<br />WORK</h2>
 
+    <div class="project-filters" role="group" aria-label="Filter projects">
+      <button data-filter="all" class="is-active">All</button>
+      <button data-filter="software">Software</button>
+      <button data-filter="hardware">Hardware</button>
+      <button data-filter="simulation">Simulation</button>
+    </div>
+
     <!-- Project: FounderOS -->
-    <article class="project" data-reveal>
+    <article class="project" data-reveal data-cat="software">
       <div class="project__text">
         <span class="project__date">Jun 2026 — Present</span>
         <h3>FounderOS</h3>
@@ -126,31 +176,42 @@
         <a class="project__link" href="https://founder0s.vercel.app/" target="_blank" rel="noopener">
           Visit FounderOS ↗
         </a>
+        <ul class="project__tags">
+          <li>AI</li>
+          <li>Web App</li>
+          <li>Vercel</li>
+        </ul>
       </div>
       <div class="project__media" data-media>
-        <img src="images/founderos.png" alt="FounderOS interface" />
+        <img src="images/founderos.png" loading="lazy" alt="FounderOS interface" />
       </div>
     </article>
 
     <!-- Project: Private Cloud AI Infrastructure -->
-    <article class="project project--flip" data-reveal>
+    <article class="project project--flip" data-reveal data-cat="software">
       <div class="project__text">
         <span class="project__date">Jun 2026</span>
         <h3>Private Cloud AI Infrastructure</h3>
         <p>
           Deployed a local-first workspace (<strong>Odysseus</strong>) — the
           self-hosted setup popularized by PewDiePie — on CachyOS using Tailscale
-          for secure remote access, and integrated it into my own build workflow
+          for secure remote access, and integrated it into my own           build workflow
           as a foundational step in learning server administration.
         </p>
+        <ul class="project__tags">
+          <li>CachyOS</li>
+          <li>Tailscale</li>
+          <li>Self-Hosted</li>
+          <li>Linux</li>
+        </ul>
       </div>
       <div class="project__media" data-media>
-        <img src="images/odysseus.png" alt="Private Cloud AI Infrastructure workspace" />
+        <img src="images/odysseus.png" loading="lazy" alt="Private Cloud AI Infrastructure workspace" />
       </div>
     </article>
 
     <!-- Project: Thermal Efficiency Analysis -->
-    <article class="project" data-reveal>
+    <article class="project" data-reveal data-cat="simulation">
       <div class="project__text">
         <span class="project__date">May 2026</span>
         <h3>Thermal Efficiency Analysis</h3>
@@ -159,14 +220,19 @@
           <strong>76% higher heat rejection</strong> through iterative thermal
           simulation and material optimization.
         </p>
+        <ul class="project__tags">
+          <li>Ansys</li>
+          <li>CFD</li>
+          <li>Thermal Simulation</li>
+        </ul>
       </div>
       <div class="project__media" data-media>
-        <img src="images/ansys.png" alt="Ansys composite wall simulation" />
+        <img src="images/ansys.png" loading="lazy" alt="Ansys composite wall simulation" />
       </div>
     </article>
 
     <!-- Project: Firefly -->
-    <article class="project project--flip" data-reveal>
+    <article class="project project--flip" data-reveal data-cat="software">
       <div class="project__text">
         <span class="project__date">Dec 2025</span>
         <h3>Firefly</h3>
@@ -177,14 +243,19 @@
         <a class="project__link" href="https://firefly-website-ten.vercel.app/" target="_blank" rel="noopener">
           Visit Firefly ↗
         </a>
+        <ul class="project__tags">
+          <li>Firebase</li>
+          <li>Flutter</li>
+          <li>Realtime</li>
+        </ul>
       </div>
       <div class="project__media" data-media>
-        <img src="images/firefly.png" alt="Firefly messaging app" />
+        <img src="images/firefly.png" loading="lazy" alt="Firefly messaging app" />
       </div>
     </article>
 
     <!-- Project: Stride -->
-    <article class="project" data-reveal>
+    <article class="project" data-reveal data-cat="software">
       <div class="project__text">
         <span class="project__date">Oct 2025</span>
         <h3>Stride</h3>
@@ -195,14 +266,19 @@
         <a class="project__link" href="https://stride-website-sage.vercel.app/" target="_blank" rel="noopener">
           Visit Stride ↗
         </a>
+        <ul class="project__tags">
+          <li>Flutter</li>
+          <li>Hive</li>
+          <li>Dart</li>
+        </ul>
       </div>
       <div class="project__media" data-media>
-        <img src="images/stride.png" alt="Stride health tracker app" />
+        <img src="images/stride.png" loading="lazy" alt="Stride health tracker app" />
       </div>
     </article>
 
     <!-- Project: Comparative Study of Aluminium 6061-T6 and High Tensile Steel -->
-    <article class="project project--flip" data-reveal>
+    <article class="project project--flip" data-reveal data-cat="simulation">
       <div class="project__text">
         <span class="project__date">Jul 2025</span>
         <h3>Comparative Study of Aluminium 6061-T6 &amp; High Tensile Steel for Bicycle Frames</h3>
@@ -214,14 +290,19 @@
         <a class="project__link" href="https://drive.google.com/drive/folders/1jqvSScJHvvme0rlmeJyd4sqGKylYPcPu" target="_blank" rel="noopener">
           View Result Files ↗
         </a>
+        <ul class="project__tags">
+          <li>Materials</li>
+          <li>FEA</li>
+          <li>Fatigue Analysis</li>
+        </ul>
       </div>
       <div class="project__media" data-media>
-        <img src="images/cycle.png" alt="Bicycle frame material study" />
+        <img src="images/cycle.png" loading="lazy" alt="Bicycle frame material study" />
       </div>
     </article>
 
     <!-- Project: RideSafe -->
-    <article class="project" data-reveal>
+    <article class="project" data-reveal data-cat="hardware">
       <div class="project__text">
         <span class="project__date">Feb 2025</span>
         <h3>RideSafe</h3>
@@ -232,9 +313,35 @@
         <a class="project__link" href="https://sites.google.com/view/ridesafeinlife/home" target="_blank" rel="noopener">
           Visit RideSafe ↗
         </a>
+        <ul class="project__tags">
+          <li>Arduino</li>
+          <li>MPU6050</li>
+          <li>IoT</li>
+        </ul>
       </div>
       <div class="project__media" data-media>
-        <img src="images/ridesafe.png" alt="RideSafe IoT device" />
+        <img src="images/ridesafe.png" loading="lazy" alt="RideSafe IoT device" />
+      </div>
+    </article>
+
+    <!-- Internship: KSRTC Regional Workshop -->
+    <article class="project project--flip" data-reveal data-cat="hardware">
+      <div class="project__text">
+        <span class="project__date">KSRTC · 14 Days</span>
+        <h3>Automotive Technician Intern</h3>
+        <p>
+          Completed a 14-day internship at the <strong>KSRTC Regional Workshop</strong>,
+          gaining hands-on exposure to vehicle diagnostics, maintenance workflows,
+          and the practical repair operations behind public transport fleets.
+        </p>
+        <ul class="project__tags">
+          <li>Automotive</li>
+          <li>Diagnostics</li>
+          <li>Workshop</li>
+        </ul>
+      </div>
+      <div class="project__media" data-media>
+        <img src="images/regional.jpg" alt="KSRTC Regional Workshop" loading="lazy" />
       </div>
     </article>
   </section>
@@ -247,7 +354,7 @@
       <!-- Certification: AWS Cloud Practitioner (2026) -->
       <article class="cert" data-reveal>
         <div class="cert__media" data-media>
-          <img src="images/cloud.jpg" alt="AWS Cloud Quest: Cloud Practitioner certificate" />
+          <img src="images/cloud.jpg" loading="lazy" alt="AWS Cloud Quest: Cloud Practitioner certificate" />
         </div>
         <div class="cert__text">
           <span class="cert__date">2026</span>
@@ -262,7 +369,7 @@
       <!-- Certification: AI, ML & Power BI Workshop (2026) -->
       <article class="cert" data-reveal>
         <div class="cert__media" data-media>
-          <img src="images/powerbi.jpg" alt="AI, ML and Introduction to Power BI Workshop certificate" />
+          <img src="images/powerbi.jpg" loading="lazy" alt="AI, ML and Introduction to Power BI Workshop certificate" />
         </div>
         <div class="cert__text">
           <span class="cert__date">2026</span>
@@ -277,7 +384,7 @@
       <!-- Certification: NPTEL Cloud Computing (2026) -->
       <article class="cert" data-reveal>
         <div class="cert__media" data-media>
-          <img src="images/nptel.jpg" alt="NPTEL Cloud Computing certification" />
+          <img src="images/nptel.jpg" loading="lazy" alt="NPTEL Cloud Computing certification" />
         </div>
         <div class="cert__text">
           <span class="cert__date">2026</span>
@@ -292,7 +399,7 @@
       <!-- Certification: AWS Generative AI Practitioner (2025) -->
       <article class="cert" data-reveal>
         <div class="cert__media" data-media>
-          <img src="images/generative.jpg" alt="AWS Cloud Quest: Generative AI Practitioner certificate" />
+          <img src="images/generative.jpg" loading="lazy" alt="AWS Cloud Quest: Generative AI Practitioner certificate" />
         </div>
         <div class="cert__text">
           <span class="cert__date">2025</span>
@@ -307,7 +414,7 @@
       <!-- Certification: ECU Tuning Workshop at Tathva '24 (2024) -->
       <article class="cert" data-reveal>
         <div class="cert__media" data-media>
-          <img src="images/tatva.jpg" alt="ECU Tuning Workshop at Tathva '24" />
+          <img src="images/tatva.jpg" loading="lazy" alt="ECU Tuning Workshop at Tathva '24" />
         </div>
         <div class="cert__text">
           <span class="cert__date">2024</span>
@@ -322,7 +429,7 @@
       <!-- Extracurricular / channel card (Ongoing) -->
       <article class="cert" data-reveal>
         <div class="cert__media" data-media>
-          <img src="images/youtube.png" alt="Garry Mods YouTube channel" />
+          <img src="images/youtube.png" loading="lazy" alt="Garry Mods YouTube channel" />
         </div>
         <div class="cert__text">
           <span class="cert__date">Ongoing</span>
@@ -339,6 +446,24 @@
   <!-- ============ SECTION 5: FOOTER / CTA ============ -->
   <footer class="footer" id="contact">
     <h2 class="footer__headline"><em>Let's build something.</em></h2>
+
+    <form
+      class="contact-form"
+      id="contactForm"
+      action="https://formsubmit.co/farhancchemmala@gmail.com"
+      method="POST"
+    >
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_subject" value="New message from portfolio" />
+      <div class="contact-form__row">
+        <input type="text" name="name" placeholder="Your name" required />
+        <input type="email" name="email" placeholder="Your email" required />
+      </div>
+      <textarea name="message" placeholder="Tell me about your idea…" required></textarea>
+      <button type="submit">Send message</button>
+      <p class="contact-form__status" role="status" aria-live="polite"></p>
+    </form>
+
     <div class="footer__links">
       <a href="https://github.com/mhd-farhanc" target="_blank" rel="noopener">GitHub</a>
       <a href="https://www.linkedin.com/in/its-muhammed-farhan-c/" target="_blank" rel="noopener">LinkedIn</a>
