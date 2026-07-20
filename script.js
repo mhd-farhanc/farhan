@@ -68,4 +68,18 @@ document.addEventListener("DOMContentLoaded", () => {
   /* ---- Footer year ---- */
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* ---- Flip nav pill to dark theme when it overlaps the white footer ---- */
+  const footerEl = document.querySelector(".footer");
+  if (footerEl && "IntersectionObserver" in window) {
+    const footerObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          entry.target.classList.toggle("in-view", entry.isIntersecting);
+        });
+      },
+      { threshold: 0.15 }
+    );
+    footerObserver.observe(footerEl);
+  }
 });
