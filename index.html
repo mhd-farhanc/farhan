@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MFC — Engineer & Developer</title>
+
+  <!-- Google Fonts: Anton + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ============ MAIN WRAPPER / GRID BACKGROUND ============ -->
+  <div class="grid-bg" aria-hidden="true"></div>
+
+  <!-- ============ SECTION 1: FLOATING NAV PILL ============ -->
+  <nav class="nav-pill" aria-label="Primary">
+    <a href="#hero" class="nav-logo">MFC</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certs">Certs</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Contact</a>
+  </nav>
+
+  <!-- ============ SECTION 2: HERO ============ -->
+  <header class="hero" id="hero">
+    <!-- Scattered sticker badges -->
+    <span class="badge badge--cyan badge--pill" data-badge style="--x:6%; --y:18%; --r:-12deg;">Design Strategy</span>
+    <span class="badge badge--yellow badge--rect" data-badge style="--x:78%; --y:12%; --r:9deg;">IoT Solutions</span>
+    <span class="badge badge--orange badge--pill" data-badge style="--x:10%; --y:74%; --r:7deg;">Flutter Apps</span>
+    <span class="badge badge--pink badge--rect" data-badge style="--x:80%; --y:70%; --r:-8deg;">Hardware/Software</span>
+    <span class="badge badge--green badge--pill" data-badge style="--x:46%; --y:88%; --r:5deg;">Build Things</span>
+
+    <div class="hero__headline" data-hero-text>
+      <span class="word">ENGINEER</span>
+      <span class="word">&amp;</span>
+      <span class="word">DEVELOPER</span>
+    </div>
+
+    <!-- Portrait -->
+    <div class="portrait" aria-label="Portrait of Farhan">
+      <img src="images/portrait.jpg" alt="Portrait of Farhan" />
+    </div>
+
+    <p class="hero__sub" data-hero-text>
+      <span class="word">Mechanical</span>
+      <span class="word">engineer,</span>
+      <span class="word">builder,</span>
+      <span class="word">and</span>
+      <span class="word">creator</span>
+      <span class="word">of</span>
+      <span class="word">integrated</span>
+      <span class="word">hardware&nbsp;&amp;&nbsp;software</span>
+      <span class="word">solutions.</span>
+    </p>
+  </header>
+
+  <!-- ============ SECTION 3: ABOUT ============ -->
+  <section class="about" id="about">
+    <div class="about__title">
+      <h2>ABOUT<br />ME</h2>
+    </div>
+    <div class="about__body">
+      <p>
+        I'm a Mechanical Engineering student at <strong>TKM College of Engineering</strong>,
+        driven by a passion for building integrated hardware-software solutions that
+        live at the messy, exciting intersection of the physical and the digital.
+      </p>
+      <p>
+        From composite-wall thermal simulations to IoT safety devices and Flutter
+        apps, I like to take ideas from first principles and ship things that work
+        in the real world — not just on paper.
+      </p>
+      <a class="stat-callout" href="https://www.youtube.com/@mynameisgarry" target="_blank" rel="noopener">
+        <span class="stat-callout__num">400+ subs</span>
+        <span class="stat-callout__meta">Creator of Garry Mods — 275,000+ total views on YouTube ↗</span>
+      </a>
+
+      <div class="skills-block">
+        <h3 class="skills-block__title">Video &amp; Content Production</h3>
+        <p class="skills-block__lead">
+          Alongside engineering, I produce content for my YouTube channel and
+          handle the full pipeline — capture, edit, color, and publish.
+        </p>
+        <ul class="skills-chips">
+          <li>OBS Studio</li>
+          <li>Kdenlive</li>
+          <li>DaVinci Resolve</li>
+          <li>Screen Capture</li>
+          <li>Color Grading</li>
+          <li>Audio Mixing</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+    <!-- ============ SECTION 4: SEQUENTIAL PROJECTS (newest first) ============ -->
+  <section class="projects" id="projects">
+    <h2 class="projects__heading">SELECTED<br />WORK</h2>
+
+    <!-- Project: FounderOS -->
+    <article class="project" data-reveal>
+      <div class="project__text">
+        <span class="project__date">Jun 2026 — Present</span>
+        <h3>FounderOS</h3>
+        <p>
+          An autonomous AI tool for builders — designed to help makers go from
+          idea to shipped product faster.
+        </p>
+        <a class="project__link" href="https://founder0s.vercel.app/" target="_blank" rel="noopener">
+          Visit FounderOS ↗
+        </a>
+      </div>
+      <div class="project__media" data-media>
+        <img src="images/founderos.png" alt="FounderOS interface" />
+      </div>
+    </article>
+
+    <!-- Project: Private Cloud AI Infrastructure -->
+    <article class="project project--flip" data-reveal>
+      <div class="project__text">
+        <span class="project__date">Jun 2026</span>
+        <h3>Private Cloud AI Infrastructure</h3>
+        <p>
+          Deployed a local-first workspace (<strong>Odysseus</strong>) — the
+          self-hosted setup popularized by PewDiePie — on CachyOS using Tailscale
+          for secure remote access, and integrated it into my own build workflow
+          as a foundational step in learning server administration.
+        </p>
+      </div>
+      <div class="project__media" data-media>
+        <img src="images/odysseus.png" alt="Private Cloud AI Infrastructure workspace" />
+      </div>
+    </article>
+
+    <!-- Project: Firefly -->
+    <article class="project" data-reveal>
+      <div class="project__text">
+        <span class="project__date">Jan 2026</span>
+        <h3>Firefly</h3>
+        <p>
+          A real-time messaging app with Firebase, featuring live chat, presence,
+          and a lightweight, snappy cross-platform client.
+        </p>
+        <a class="project__link" href="https://firefly-website-ten.vercel.app/" target="_blank" rel="noopener">
+          Visit Firefly ↗
+        </a>
+      </div>
+      <div class="project__media" data-media>
+        <img src="images/firefly.png" alt="Firefly messaging app" />
+      </div>
+    </article>
+
+    <!-- Project: Stride -->
+    <article class="project project--flip" data-reveal>
+      <div class="project__text">
+        <span class="project__date">Oct 2025</span>
+        <h3>Stride</h3>
+        <p>
+          A Pedometer &amp; Health Tracker built with Flutter and Hive for fast,
+          local-first step tracking and personal health insights.
+        </p>
+        <a class="project__link" href="https://stride-website-sage.vercel.app/" target="_blank" rel="noopener">
+          Visit Stride ↗
+        </a>
+      </div>
+      <div class="project__media" data-media>
+        <img src="images/stride.png" alt="Stride health tracker app" />
+      </div>
+    </article>
+
+    <!-- Project: RideSafe -->
+    <article class="project" data-reveal>
+      <div class="project__text">
+        <span class="project__date">May 2025</span>
+        <h3>RideSafe</h3>
+        <p>
+          An IoT Emergency Alert System prototype for motorcycles using Arduino
+          and the MPU6050 accelerometer to detect crashes and trigger alerts.
+        </p>
+        <a class="project__link" href="https://sites.google.com/view/ridesafeinlife/home" target="_blank" rel="noopener">
+          Visit RideSafe ↗
+        </a>
+      </div>
+      <div class="project__media" data-media>
+        <img src="images/ridesafe.png" alt="RideSafe IoT device" />
+      </div>
+    </article>
+
+    <!-- Project: Thermal Efficiency Analysis -->
+    <article class="project project--flip" data-reveal>
+      <div class="project__text">
+        <span class="project__date">May 2025</span>
+        <h3>Thermal Efficiency Analysis</h3>
+        <p>
+          A 4-layer composite wall engineered in Ansys Workbench, achieving
+          <strong>76% higher heat rejection</strong> through iterative thermal
+          simulation and material optimization.
+        </p>
+      </div>
+      <div class="project__media" data-media>
+        <img src="images/ansys.png" alt="Ansys composite wall simulation" />
+      </div>
+    </article>
+
+    <!-- Project: Comparative Study of Aluminium 6061-T6 and High Tensile Steel -->
+    <article class="project" data-reveal>
+      <div class="project__text">
+        <span class="project__date">May 2025</span>
+        <h3>Comparative Study of Aluminium 6061-T6 &amp; High Tensile Steel for Bicycle Frames</h3>
+        <p>
+          A material analysis comparing Aluminium 6061-T6 and High Tensile Steel
+          for bicycle frame design — evaluating strength, weight, and fatigue
+          performance to inform real-world frame selection.
+        </p>
+        <a class="project__link" href="https://drive.google.com/drive/folders/1jqvSScJHvvme0rlmeJyd4sqGKylYPcPu" target="_blank" rel="noopener">
+          View Result Files ↗
+        </a>
+      </div>
+      <div class="project__media" data-media>
+        <img src="images/cycle.png" alt="Bicycle frame material study" />
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ SECTION 4B: CERTIFICATIONS ============ -->
+  <section class="certs" id="certs">
+    <h2 class="certs__heading">CERTIFICATIONS<br />&amp; EXTRACURRICULARS</h2>
+
+    <div class="certs__grid">
+      <!-- Certification card -->
+      <article class="cert" data-reveal>
+        <div class="cert__media" data-media>
+          <span class="media__hint">Certificate Image</span>
+        </div>
+        <div class="cert__text">
+          <span class="cert__date">2025</span>
+          <h3>Certification Title</h3>
+          <p>Issuing organization — short description of what you earned.</p>
+        </div>
+      </article>
+
+      <!-- Extracurricular / channel card -->
+      <article class="cert" data-reveal>
+        <div class="cert__media" data-media>
+          <span class="media__hint">Certificate Image</span>
+        </div>
+        <div class="cert__text">
+          <span class="cert__date">Ongoing</span>
+          <h3>Garry Mods — YouTube</h3>
+          <p>
+            Running a creator channel (400+ subs, 275,000+ views) where I apply
+            <strong>video editing</strong> with OBS, Kdenlive, and DaVinci Resolve.
+          </p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ SECTION 5: FOOTER / CTA ============ -->
+  <footer class="footer" id="contact">
+    <h2 class="footer__headline"><em>Let's build something.</em></h2>
+    <div class="footer__links">
+      <a href="https://github.com/mhd-farhanc" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/its-muhammed-farhan-c/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:farhancchemmala@gmail.com">farhancchemmala@gmail.com</a>
+    </div>
+    <p class="footer__credit">© <span id="year"></span> MFC — Engineer &amp; Developer</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
